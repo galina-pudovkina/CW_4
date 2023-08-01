@@ -1,6 +1,7 @@
 from api.super_job_vacancy_api import SuperJobVacancyAPI
 from api.hh_vacancy_api import HHVacancyAPI
 from file_saver.json_saver import JsonSaver
+from models.vacancy import Vacancy
 
 
 class JobParser:
@@ -53,7 +54,7 @@ class JobParser:
 
         while True:
             if user_input == 1:
-                [self.json_saver.add_vacancy(vacancy) for vacancy in self.all_vacancies]
+                self.json_saver.add_vacancy(Vacancy.vac_all)
                 break
             elif user_input == 2:
                 break
